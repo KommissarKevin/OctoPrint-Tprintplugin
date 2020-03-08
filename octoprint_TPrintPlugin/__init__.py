@@ -11,10 +11,12 @@ class TPrintPlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplatePlug
 
 	def get_settings_defaults(self):
 		return dict(pinlight="4", pinfan="17")
+	
+	def get_template_vars(self):
+		return dict(pinlight=self._settings.get["pinlight"]), pinfan=self._settings.get("pinfan"]))
 
 	def get_template_configs(self):
 		return [
-			dict(type="navbar", custom_bindings=False),
 			dict(type="settings", custom_bindings=False)
 		]
 
