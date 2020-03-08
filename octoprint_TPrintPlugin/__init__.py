@@ -35,14 +35,14 @@ class TPrintPlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplatePlug
 			GPIO.setup(relais_light_gpio, GPIO.OUT)  # GPIO Modus zuweisen
 			GPIO.output(relais_light_gpio, GPIO.LOW)  # aus
 
-		if event == "PrintStarted" or event == "PrintResumed":
+		if event == "PrintStarted":
 			# Bei Start Lüfter
 			GPIO.setmode(GPIO.BCM)  # GPIO Nummern statt Board Nummern
 			relais_fan_gpio = int(self._settings.get(["pinfan"]))
 			GPIO.setup(relais_fan_gpio, GPIO.OUT)  # GPIO Modus zuweisen
 			GPIO.output(relais_fan_gpio, GPIO.HIGH)  # an
 
-		if event == "PrintFailed" or event == "PrintCancelled" or event == "PrintPaused":
+		if event == "PrintFailed" or event == "PrintCancelled":
 			# Lüfter aus
 			GPIO.setmode(GPIO.BCM)  # GPIO Nummern statt Board Nummern
 			relais_fan_gpio = int(self._settings.get(["pinfan"]))
