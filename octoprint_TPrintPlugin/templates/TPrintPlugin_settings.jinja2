@@ -1,11 +1,5 @@
 <form class="form-horizontal">
     <div class="control-group">
-        <label class="control-label">{{ _('URL') }}</label>
-        <div class="controls">
-            <input type="text" class="input-block-level" data-bind="value: settings.plugins.TPrintPlugin.url">
-        </div>
-    </div>
-    <div class="control-group">
         <label class="control-label">{{ _('The pin for the light') }}</label>
         <div class="controls">
             <input type="number" class="input-block-level" data-bind="value: settings.plugins.TPrintPlugin.pinlight">
@@ -15,12 +9,6 @@
         <label class="control-label">{{ _('The pin for the fan') }}</label>
         <div class="controls">
             <input type="number" class="input-block-level" data-bind="value: settings.plugins.TPrintPlugin.pinfan">
-        </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label">{{ _('The pin for the energy') }}</label>
-        <div class="controls">
-            <input type="number" class="input-block-level" data-bind="value: settings.plugins.TPrintPlugin.pinenergy">
         </div>
     </div>
 </form>
